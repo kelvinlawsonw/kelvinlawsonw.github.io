@@ -58,7 +58,7 @@ ignoreFiles = ["themes/terminal/content"]
     url = "https://github.com/kelvinlawsonw"
   [[params.social]]
     name = "linkedin"
-    url = "https://linkedin.com/in/myusername"
+    url = "https://www.linkedin.com/in/kelvin-lawson-w/"
   [[params.social]]
     name = "buy me a coffee"
     url = "https://www.buymeacoffee.com/myusername"
