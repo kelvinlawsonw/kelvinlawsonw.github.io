@@ -1,0 +1,69 @@
+baseURL = "https://mywebsite.com/"
+languageCode = "en-us"
+title = "Kelvin Lawson-W"
+theme = "terminal"
+timeZone = "Asia/Kolkata"
+
+[menus]
+  [[menus.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about.html"
+    weight = 20
+  [[menus.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog"
+    weight = 30
+  [[menus.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags"
+    weight = 40
+
+paginate = 10
+
+[permalinks]
+  blog = "/blog/:year/:month/:day/:title/"
+
+[taxonomies]
+  tag = "tags"
+  author = "authors"
+
+[indexes]
+  tag = "tags"
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    smartypants = true
+    fractions = true
+    superscript = true
+    unsafe = true
+
+# Properly format ignoreFiles as an array
+ignoreFiles = ["themes/terminal/content"]
+
+#[outputs]
+  #[outputs.blog]
+    #blog = ["HTML", "RSS", "sitemap-blog.xml"]
+  #[outputs.home]
+    #home = ["HTML", "RSS", "sitemap.xml"]
+
+[params]
+  #disqus = "mydisquscode"
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/kelvinlawsonw"
+  [[params.social]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/myusername"
+  [[params.social]]
+    name = "buy me a coffee"
+    url = "https://www.buymeacoffee.com/myusername"
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"
