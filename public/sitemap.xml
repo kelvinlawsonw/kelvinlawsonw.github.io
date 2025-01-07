@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/iac/</loc>
+    <lastmod>2025-01-05T21:56:26-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/modules/</loc>
+    <lastmod>2025-01-05T21:56:26-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/terraform/</loc>
+    <lastmod>2025-01-05T21:56:26-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/2025/01/05/understanding-terraform-modules/</loc>
+    <lastmod>2025-01-05T21:56:26-05:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/blog/2024/12/29/test/</loc>
     <lastmod>2024-12-29T21:56:26-05:00</lastmod>
   </url><url>

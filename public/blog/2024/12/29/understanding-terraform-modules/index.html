@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+
+<meta name="ICBM" content="19.0760, 72.8777">
+<meta name="geo.position" content="19.0760;72.8777">
+<meta name="geo.region" content="IN-MH">
+<meta name="geo.placename" content="Mumbai">
+<title>Understanding Terraform Modules | Kelvin Lawson-W</title>
+
+
+      <link rel="stylesheet" href="/css/tailwind.css" type="text/css">
+
+</head>
+
+<body class="bg-gradient-to-r from-slate-900 to-slate-800 font-mono text-white">
+  <div class="container mx-auto flex flex-col px-4 xl:w-8/12 sm:max-w-full">
+    
+  
+
+  <header class="flex flex-row py-4" >
+
+  
+
+
+
+  <nav
+    class="flex flex-row items-center w-full justify-between">
+
+
+  
+  
+    <div class="flex flex-col gap-1">
+      <a href="http://localhost:1313/" class="text-4xl font-bold hover:text-sky-400 whitespace-nowrap">Kelvin Lawson-W</a>
+      <p>Cloud Architecture & DevOps</p>
+    </div>
+  
+
+  <div class="dropdown-menu flex flex-row absolute max-lg:w-full max-lg:items-center max-lg:justify-center max-lg:-top-full lg:static max-lg:bg-slate-900 max-lg:h-[calc(100dvh)] max-lg:left-0">
+    <ul class="flex flex-col lg:flex-row gap-2">
+      
+  <li class="font-bold border border-sky-400 px-3 py-2 hover:bg-sky-400 focus:text-sky-400 text-center">
+    <a href="/about.html">About</a>
+  </li>
+
+  <li class="font-bold border border-sky-400 px-3 py-2 hover:bg-sky-400 focus:text-sky-400 text-center">
+    <a href="/blog">Blog</a>
+  </li>
+
+  <li class="font-bold border border-sky-400 px-3 py-2 hover:bg-sky-400 focus:text-sky-400 text-center">
+    <a href="/tags">Tags</a>
+  </li>
+
+    </ul>
+  </div>
+  <div class="open-dropdown-button lg:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="32" height="32" fill="white">
+      <path
+        d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+    </svg>
+  </div>
+  <div class="close-dropdown-button hidden z-50">
+    <svg xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 384 512" width="32" height="32" fill="white">
+      <path
+        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+    </svg>
+  </div>
+</nav>
+
+</header>
+
+  <div class="flex flex-col pt-8 gap-10 w-full">
+    
+    <div class="flex flex-col w-full gap-4">
+      <h2 class="text-3xl font-bold">Understanding Terraform Modules</h2>
+      <div class="flex flex-col gap-4 w-full">
+        <hr />
+        <div class="prose prose-invert max-w-full">
+  <h3 id="what-are-terraform-modules">What are Terraform Modules</h3>
+<p>A Terraform module in it&rsquo;s simplest form is a container for multiple resources that are used together. This is also a direct definition from the <strong><a href="https://developer.hashicorp.com/terraform/language/modules/develop">Hashicorp website</a></strong>. It’s a logical grouping of resources that can be reused across different parts of your infrastructure, helping to reduce duplication and increase ease of maintainance.</p>
+<p>There are typically two types of modules:</p>
+<ul>
+<li>Root Module: This is the main configuration in your working directory</li>
+<li>Child Module: This is called by another module using the module block</li>
+</ul>
+<p>A typical module is structured just as follows:</p>
+<pre tabindex="0"><code>├── main.tf
+├── outputs.tf
+├── README.md (optional)
+└── variables.tf
+└── providers.tf (optional)
+</code></pre><p>We&rsquo;ll be using a quick scenario of the creation of a simple S3 bucket to illustrate how a module is created and it&rsquo;s usage:</p>
+<h3 id="maintf">main.tf</h3>
+<pre tabindex="0"><code>resource &#34;aws_s3_bucket&#34; &#34;this&#34; {
+  bucket        = var.bucket_name
+  acl           = var.acl
+  force_destroy = var.force_destroy
+
+  tags = var.tags
+}
+</code></pre><h3 id="variablestf">variables.tf</h3>
+<pre tabindex="0"><code>variable &#34;bucket_name&#34; {
+  description = &#34;The name of the S3 bucket&#34;
+  type        = string
+}
+
+variable &#34;acl&#34; {
+  description = &#34;The access control list (ACL) for the S3 bucket&#34;
+  type        = string
+  default     = &#34;private&#34;
+}
+
+variable &#34;force_destroy&#34; {
+  description = &#34;Whether to force destroy the bucket when it is deleted&#34;
+  type        = bool
+  default     = false
+}
+
+variable &#34;tags&#34; {
+  description = &#34;Tags to apply to the S3 bucket&#34;
+  type        = map(string)
+  default     = {}
+}
+</code></pre><h3 id="outputstf">outputs.tf</h3>
+<pre tabindex="0"><code>output &#34;bucket_id&#34; {
+  description = &#34;The ID of the S3 bucket&#34;
+  value       = aws_s3_bucket.this.id
+}
+
+output &#34;bucket_arn&#34; {
+  description = &#34;The ARN of the S3 bucket&#34;
+  value       = aws_s3_bucket.this.arn
+}
+</code></pre><h3 id="example-usage">Example Usage</h3>
+<p>The module can now be called and used as many times as required.</p>
+<pre tabindex="0"><code>module &#34;s3_bucket&#34; {
+  source        = &#34;./path/to/your/module&#34;
+  bucket_name   = &#34;my-awesome-new-bucket&#34;
+  acl           = &#34;private&#34;
+  force_destroy = true
+  tags = {
+    Owner       = &#34;FirstName LastName&#34;
+  }
+}
+</code></pre><h3 id="benefits-of-terraform-modules">Benefits of Terraform Modules</h3>
+<ul>
+<li>
+<p>Reusability: Modules promote code-reusability by allowing engineers to write once and use across multiple projects and environments. Modules also help adherence to the DRY (Don&rsquo;t Repeat Yourself) principle by abrastracting repetive patterns.</p>
+</li>
+<li>
+<p>Consistency: Modules ensure that infrastructure follows the same pattern reducing human error and avoiding any discrepancies.</p>
+</li>
+<li>
+<p>Collaboration: Teams of any size can collaborate better by using shared modules.</p>
+</li>
+<li>
+<p>Scalability: The task of scaling infrastructure is made easier as this modular approach can be used to deploy identical resources in different regions.</p>
+</li>
+</ul>
+
+</div>
+      </div>
+    </div>
+    <div class="footer flex items-center justify-center">
+  <div class="py-4">
+  <footer>
+    <p class="whitespace-nowrap">© 2025. All rights reserved.</p>
+  </footer>
+</div>
+</div>
+  </div>
+
+  </div>
+  
+      <script type="text/javascript" src="/js/navbar.js"></script>
+
+  <script id="dsq-count-scr" src="//nayanseth.disqus.com/count.js" async></script>
+  
+
+</body>
+
+</html>
