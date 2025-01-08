@@ -13,7 +13,7 @@
       <link>http://localhost:1313/blog/2025/01/05/understanding-terraform-modules/</link>
       <pubDate>Sun, 05 Jan 2025 21:56:26 -0500</pubDate>
       <guid>http://localhost:1313/blog/2025/01/05/understanding-terraform-modules/</guid>
-      <description>What are Terraform Modules A Terraform module in it&amp;rsquo;s simplest form is a container for multiple resources that are used together. This is also a direct definition from the Hashicorp website. It’s a logical grouping of resources that can be reused across different parts of your infrastructure, helping to reduce duplication and increase ease of maintainance.&#xA;There are typically two types of modules:&#xA;Root Module: This is the top level configuration in your working directory where the resources for your primary infrastructure are defined.</description>
+      <description>What are Terraform Modules? A Terraform module in it&amp;rsquo;s simplest form is a container for multiple resources that are used together. This is also a direct definition from the Hashicorp website. It’s a logical grouping of resources that can be reused across different parts of your infrastructure, helping to reduce duplication and increase ease of maintainance.&#xA;There are typically two types of modules:&#xA;Root Module: This is the top level configuration in your working directory where the resources for your primary infrastructure are defined.</description>
     </item>
     <item>
       <title>Test</title>

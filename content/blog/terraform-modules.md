@@ -6,7 +6,7 @@ tags = ["terraform", "iac", "modules" ]
 +++
 
 
-### What are Terraform Modules 
+### What are Terraform Modules?
 
 A Terraform module in it's simplest form is a container for multiple resources that are used together. This is also a direct definition from the __[Hashicorp website](https://developer.hashicorp.com/terraform/language/modules/develop)__. It’s a logical grouping of resources that can be reused across different parts of your infrastructure, helping to reduce duplication and increase ease of maintainance.
 
