@@ -64,7 +64,7 @@ jobs:
       - name: Debug Build Output
         run: ls -lR ./public || echo "⚠️ No public directory found!"      
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           name: hugo-site
           path: ./public
