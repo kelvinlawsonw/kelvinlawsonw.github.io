@@ -63,11 +63,13 @@ jobs:
        # ✅ Debugging step to confirm Hugo generated public/
       - name: Debug Build Output
         run: ls -lR ./public || echo "⚠️ No public directory found!"      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: hugo-site
           path: ./public
+          retention-days: 1
 
   # Deployment job
   deploy:
