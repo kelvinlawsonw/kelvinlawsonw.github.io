@@ -9,6 +9,13 @@
     <lastBuildDate>Sun, 05 Jan 2025 21:56:26 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Terraform Test Framework: Say Goodbye to “Terraform Apply and Pray”</title>
+      <link>http://localhost:1313/blog/2025/01/05/terraform-test-framework-say-goodbye-to-terraform-apply-and-pray/</link>
+      <pubDate>Sun, 05 Jan 2025 21:56:26 -0500</pubDate>
+      <guid>http://localhost:1313/blog/2025/01/05/terraform-test-framework-say-goodbye-to-terraform-apply-and-pray/</guid>
+      <description>The Terraform Test Framework Introduced in Terraform v1.6.x, The Terraform Test Framework was created to help validate infrastructure configurations before applying into any production environment. The testing framework introduces a native and built in way to define tests that you would like terraform to run when you want to implement either unit or integration testing.&#xA;In this post, we&amp;rsquo;ll dive into:&#xA;The importance of the Terraform Test Framework How the Terraform&amp;rsquo;s built-in test framework works A quick sample of writing and running Terraform Tests The Importance of the Terraform Test Framework Before it&amp;rsquo;s introduction, Infrastructure and DevOps engineers had to rely on tools like Terratest or manual verification for testing.</description>
+    </item>
+    <item>
       <title>Understanding Terraform Modules</title>
       <link>http://localhost:1313/blog/2025/01/05/understanding-terraform-modules/</link>
       <pubDate>Sun, 05 Jan 2025 21:56:26 -0500</pubDate>
