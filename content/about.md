@@ -20,9 +20,10 @@ With a strong foundation in Azure, AWS, and Terraform, I specialize in:
 
 
 ## Certifications
+- **Microsoft Certified: Azure Administrator Associate** 
 - **Microsoft Certified: DevOps Engineer Expert** 
 - **Microsoft Certified: Azure Solutions Architect Expert** 
-- **AWS Certified Solutions Architect - Associate** 
 - **HashiCorp Certified: Terraform Associate** 
-- **Microsoft Certified: Azure Administrator Associate** 
+- **AWS Certified Solutions Architect - Associate** 
 - **AWS Certified Solutions Architect - Professional**
+- **Databricks Certified Data Engineer - Associate**
