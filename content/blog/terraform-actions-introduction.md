@@ -1,6 +1,6 @@
 +++
-title = 'Plan. Apply Act. Bringing Day 2 Work into Terraform'
-date = 2025-01-05T21:56:26-05:00
+title = 'Plan. Apply. Act. Bringing Day 2 Work into Terraform'
+date = 2025-10-11T21:56:26-05:00
 draft = false
 tags = ["terraform", "iac"]
 +++
