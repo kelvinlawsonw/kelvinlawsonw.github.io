@@ -8,7 +8,7 @@ url: "/about.html"
 ---
 
 ## Hello, I'm Kelvin 👋
-I am a seasoned Cloud Architect & DevOps Engineer. I bring a wealth of experience in cloud infrastructure, modern DevOps practices and enterprise-grade solutions. 
+I enjoy everything Cloud Architecture & Infrastructure.
 
 ## My Expertise
 With a strong foundation in Azure, AWS, and Terraform, I specialize in:
