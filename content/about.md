@@ -11,12 +11,12 @@ url: "/about.html"
 I enjoy everything Cloud Architecture & Infrastructure.
 
 ## My Expertise
-With a strong foundation in Azure, AWS, and Terraform, I specialize in:
-  - Designing scalable and secure cloud architectures.
-  - Implementing CI/CD pipelines to streamline delivery.
-  - Crafting Landing Zones to establish secure and compliant cloud environments.
-  - Implementing Infrastructure as Code (IaC) solutions using Terraform, Bicep, and ARM templates, ensuring repeatable, version-controlled, and efficient infrastructure deployments.
-  - Deploying containerized applications with Kubernetes, including multi-node Kubernetes clusters.
+- Cloud Architecture
+- Landing Zones and Compliancy  
+- CI/CD
+- Infrastructure as Code (Terraform, Bicep, and ARM templates)
+- Python
+- Docker & Kubernetes 
 
 
 ## Certifications
