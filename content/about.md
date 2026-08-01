@@ -27,3 +27,4 @@ I enjoy everything Cloud Architecture & Infrastructure.
 - **AWS Certified Solutions Architect - Associate** 
 - **AWS Certified Solutions Architect - Professional**
 - **Databricks Certified Data Engineer - Associate**
+- **Databricks Certified Data Engineer - Professional**
