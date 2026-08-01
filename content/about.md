@@ -13,10 +13,11 @@ I enjoy everything Cloud Architecture & Infrastructure.
 ## My Expertise
 - Cloud Architecture
 - Landing Zones and Compliancy  
-- CI/CD
+- CI/CD - Github Actions and Azure DevOps
 - Infrastructure as Code (Terraform, Bicep, and ARM templates)
 - Python
 - Docker & Kubernetes 
+- MLOps
 
 
 ## Certifications
